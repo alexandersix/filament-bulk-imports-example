@@ -14,9 +14,12 @@ class BookImporter extends Importer
     public static function getColumns(): array
     {
         return [
-            ImportColumn::make('user_id'),
-            ImportColumn::make('title'),
-            ImportColumn::make('author'),
+            ImportColumn::make('user_id')
+                ->requiredMapping(),
+            ImportColumn::make('title')
+                ->requiredMapping(),
+            ImportColumn::make('author')
+                ->requiredMapping(),
         ];
     }
 
