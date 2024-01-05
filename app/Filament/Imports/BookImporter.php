@@ -3,6 +3,7 @@
 namespace App\Filament\Imports;
 
 use App\Models\Book;
+use Filament\Actions\Imports\ImportColumn;
 use Filament\Actions\Imports\Importer;
 use Filament\Actions\Imports\Models\Import;
 
@@ -13,7 +14,9 @@ class BookImporter extends Importer
     public static function getColumns(): array
     {
         return [
-            //
+            ImportColumn::make('user_id'),
+            ImportColumn::make('title'),
+            ImportColumn::make('author'),
         ];
     }
 
