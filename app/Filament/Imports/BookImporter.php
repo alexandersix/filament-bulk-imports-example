@@ -15,10 +15,13 @@ class BookImporter extends Importer
     {
         return [
             ImportColumn::make('user_id')
+                ->rules(['required', 'exists:users,id'])
                 ->requiredMapping(),
             ImportColumn::make('title')
+                ->rules(['required', 'max:255'])
                 ->requiredMapping(),
             ImportColumn::make('author')
+                ->rules(['required', 'max:255'])
                 ->requiredMapping(),
         ];
     }
