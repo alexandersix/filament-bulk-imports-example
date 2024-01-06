@@ -14,8 +14,8 @@ class BookImporter extends Importer
     public static function getColumns(): array
     {
         return [
-            ImportColumn::make('user_id')
-                ->rules(['required', 'exists:users,id'])
+            ImportColumn::make('user')
+                ->relationship(resolveUsing: 'email')
                 ->requiredMapping(),
             ImportColumn::make('title')
                 ->rules(['required', 'max:255'])
